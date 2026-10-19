@@ -1,0 +1,79 @@
+Dưới đây là roadmap theo tuần tự để bạn làm frontend khớp với backend hiện tại, theo đúng những gì backend đang có: auth JWT, sản phẩm, danh mục, biến thể, user, role. Mình chia theo hướng có thể làm ngay, rồi tách riêng phần “ecommerce đầy đủ” vì backend hiện tại chưa có cart, order, checkout, payment.
+
+Roadmap Frontend Theo Tuần
+
+Tuần 1: Khởi tạo nền tảng frontend
+
+Tạo project React + TypeScript + Vite.
+Cài routing, structure thư mục, alias path, ESLint/Prettier.
+Chọn UI stack: Tailwind CSS + shadcn/ui nếu muốn đẹp và linh hoạt, hoặc MUI nếu muốn nhanh.
+Tạo layout tổng: header, footer, main layout, admin layout.
+Tạo hệ thống theme, typography, màu sắc, button, input, card.
+Kết quả mong muốn: frontend chạy được, có khung giao diện chuẩn, sẵn sàng gắn API.
+Tuần 2: Dựng lớp gọi API và auth
+
+Tạo API client chung.
+Gắn interceptor cho JWT access token và refresh token.
+Viết các hàm gọi API cho login, refresh, logout, register, get current user.
+Tạo auth store để lưu trạng thái đăng nhập và role.
+Làm route guard cho user thường và admin.
+Kết quả mong muốn: đăng nhập/đăng ký/logout hoạt động, token xử lý ổn định.
+Tuần 3: Làm trang public catalog
+
+Làm trang home.
+Làm trang danh sách sản phẩm.
+Làm search theo tên và brand.
+Làm lọc theo category.
+Làm trang chi tiết sản phẩm.
+Hiển thị danh sách variant của sản phẩm.
+Tạo loading, empty state, error state rõ ràng.
+Kết quả mong muốn: khách truy cập xem sản phẩm được đầy đủ, đúng API backend.
+Tuần 4: Làm phần tài khoản người dùng
+
+Làm trang login.
+Làm trang register.
+Làm trang profile / my account.
+Hiển thị thông tin user từ current user endpoint.
+Làm logout từ giao diện.
+Làm thông báo lỗi validation khớp với message backend.
+Kết quả mong muốn: user tự đăng nhập, đăng ký, xem profile, logout.
+Tuần 5: Làm khu admin quản lý dữ liệu
+
+Làm dashboard admin.
+Làm CRUD product.
+Làm CRUD category.
+Làm CRUD product variant.
+Làm CRUD user.
+Làm CRUD role.
+Làm bảng dữ liệu, modal form, confirm delete, search, validate.
+Kết quả mong muốn: admin quản trị toàn bộ dữ liệu backend đang hỗ trợ.
+Tuần 6: Hoàn thiện UX và chất lượng
+
+Làm responsive cho mobile, tablet, desktop.
+Chuẩn hóa format giá, ngày, stock, ảnh.
+Tối ưu navigation và feedback khi thao tác.
+Làm skeleton, toast, error boundary.
+Viết test cơ bản cho component và API flow quan trọng.
+Kết quả mong muốn: frontend ổn định, dễ dùng, nhìn hoàn chỉnh hơn.
+Tuần 7: Kiểm thử và chốt tích hợp
+
+Kiểm tra toàn bộ luồng auth.
+Kiểm tra catalog CRUD qua UI.
+Kiểm tra role guard: user thường không vào được admin.
+Kiểm tra lỗi backend trả về có hiển thị đúng.
+Kiểm tra build production.
+Kết quả mong muốn: frontend sẵn sàng để ghép với backend ổn định.
+Tuần 8: Bổ sung để thành dự án ecommerce hoàn chỉnh
+
+Thêm cart.
+Thêm checkout.
+Thêm order history.
+Thêm payment flow.
+Thêm dashboard đơn hàng cho admin.
+Phần này chỉ làm được đầy đủ khi backend có thêm API tương ứng.
+Kết quả mong muốn: dự án thành một ecommerce hoàn chỉnh đúng nghĩa.
+Ưu tiên thực tế
+
+Nếu muốn ra sản phẩm nhanh: làm tuần 1 đến tuần 5 trước.
+Nếu muốn đẹp và chắc: thêm tuần 6.
+Nếu muốn đúng nghĩa mua hàng online: backend cần mở rộng thêm tuần 8.

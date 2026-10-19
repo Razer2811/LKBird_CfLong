@@ -1,0 +1,13 @@
+export { HomePage } from './home-page';
+export { ProductsPage } from './products-page';
+export { ProductDetailPage } from './product-detail-page';
+export { LoginPage } from './login-page';
+export { RegisterPage } from './register-page';
+export { ProfilePage } from './profile-page';
+export { CategoriesPage } from './categories-page';
+export { AdminDashboardPage } from './admin-dashboard-page';
+export { AdminProductsPage } from './admin-products-page';
+export { AdminCategoriesPage } from './admin-categories-page';
+export { AdminUsersPage } from './admin-users-page';
+export { AdminRolesPage } from './admin-roles-page';
+export { NotFoundPage } from './not-found-page';
