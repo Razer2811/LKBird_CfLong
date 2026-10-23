@@ -61,7 +61,12 @@ function CategoriesPage() {
         categoriesQuery.data.length ? (
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {categoriesQuery.data.map((category) => (
-              <Link key={category.id} to="/products" className="block">
+              <Link
+                key={category.id}
+                to="/products"
+                search={{ categoryId: category.id }}
+                className="block"
+              >
                 <Card className="h-full rounded-3xl border-border/70 p-6 shadow-card transition-shadow hover:shadow-soft">
                   <span className="flex size-11 items-center justify-center rounded-2xl bg-leaf-soft text-primary">
                     <Layers className="size-5" />

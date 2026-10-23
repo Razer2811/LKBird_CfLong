@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { z } from "zod";
 
 import { catalogApi } from "@/api/catalog";
 import { EmptyState, ErrorState, LoadingGrid } from "@/components/feedback/states";
@@ -20,6 +21,9 @@ import { getApiErrorMessage } from "@/lib/api-error";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/products/")({
+  validateSearch: z.object({
+    categoryId: z.coerce.number().int().positive().optional(),
+  }),
   head: () => ({
     meta: [
       { title: "Sản phẩm chim & cá cảnh — Cà phê Long, thức ăn chim, cá cảnh" },
@@ -40,8 +44,9 @@ export const Route = createFileRoute("/products/")({
 
 function ProductsPage() {
   const pageSize = 9;
+  const search = Route.useSearch();
   const [keyword, setKeyword] = useState("");
-  const [categoryId, setCategoryId] = useState<number | null>(null);
+  const [categoryId, setCategoryId] = useState<number | null>(search.categoryId ?? null);
   const [page, setPage] = useState(0);
 
   const productsQuery = useQuery({
