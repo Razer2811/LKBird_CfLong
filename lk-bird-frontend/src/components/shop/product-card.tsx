@@ -16,13 +16,20 @@ export function ProductCard({
   return (
     <Card className="flex h-full flex-col overflow-hidden rounded-3xl border-border/70 p-0 shadow-card transition-shadow hover:shadow-soft">
       <div className="aspect-[4/3] overflow-hidden bg-secondary/60">
-        <img
-          src={getProductImageUrl(product.imageUrl)}
-          alt={product.name}
-          loading="lazy"
-          onError={handleProductImageError}
-          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-        />
+        <Link
+          to="/products/$id"
+          params={{ id: String(product.id) }}
+          aria-label={`Xem chi tiết ${product.name}`}
+          className="block h-full"
+        >
+          <img
+            src={getProductImageUrl(product.imageUrl)}
+            alt={product.name}
+            loading="lazy"
+            onError={handleProductImageError}
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </Link>
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-5">

@@ -2,6 +2,8 @@ import type { SyntheticEvent } from "react";
 
 import { API_BASE_URL } from "./api-client";
 
+export const BRAND_LOGO_URL = `${API_BASE_URL}/uploads/brand-logo.png`;
+
 export const PRODUCT_IMAGE_PLACEHOLDER =
   "data:image/svg+xml;utf8," +
   encodeURIComponent(

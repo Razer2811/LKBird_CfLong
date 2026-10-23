@@ -11,11 +11,13 @@ import { useEffect, type ReactNode } from "react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { FloatingWidgets } from "@/components/layout/floating-widgets";
 import { Toaster } from "@/components/ui/sonner";
 import { hydrateSession } from "@/stores/auth-store";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { BRAND_LOGO_URL } from "../lib/product-image";
 
 function NotFoundComponent() {
   return (
@@ -98,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: BRAND_LOGO_URL, type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -136,6 +138,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <FloatingWidgets />
       </div>
       <Toaster position="top-center" richColors />
     </QueryClientProvider>

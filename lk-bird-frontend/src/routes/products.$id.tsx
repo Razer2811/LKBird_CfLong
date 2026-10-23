@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, PackageCheck } from "lucide-react";
+import { ArrowLeft, Mail, PackageCheck, Phone } from "lucide-react";
 
 import { catalogApi } from "@/api/catalog";
 import { ErrorState } from "@/components/feedback/states";
@@ -105,7 +105,7 @@ function ProductDetailPage() {
             </p>
 
             <div className="space-y-3">
-              <h2 className="text-base font-semibold">Phiên bản &amp; giá</h2>
+              <h2 className="text-base font-semibold">Giá sản phẩm</h2>
 
               {variantsQuery.isPending ? <Skeleton className="h-20 w-full rounded-2xl" /> : null}
               {variantsQuery.isError ? (
@@ -120,15 +120,11 @@ function ProductDetailPage() {
                     {variantsQuery.data.map((variant) => (
                       <Card
                         key={variant.id}
-                        className="flex flex-row items-center justify-between gap-4 rounded-2xl border-border/70 p-4"
+                        className="flex w-fit min-w-48 flex-row items-center justify-start gap-4 rounded-2xl border-primary/30 bg-primary/5 px-4 py-3 shadow-card"
                       >
-                        <div className="space-y-1">
-                          <p className="font-semibold">{variant.variantName}</p>
-                          <p className="text-xs text-muted-foreground">SKU: {variant.sku}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-semibold text-primary">{formatVnd(variant.price)}</p>
-                          <p className="flex items-center justify-end gap-1 text-xs text-muted-foreground">
+                        <div className="text-left">
+                          <p className="text-xl font-bold text-primary">{formatVnd(variant.price)}</p>
+                          <p className="mt-1 flex items-center justify-start gap-1 text-xs text-muted-foreground">
                             <PackageCheck className="size-3.5" />
                             {variant.stock > 0 ? `Còn ${variant.stock}` : "Tạm hết hàng"}
                           </p>
@@ -143,6 +139,24 @@ function ProductDetailPage() {
                 )
               ) : null}
             </div>
+
+            <Card className="space-y-3 rounded-2xl border-border/70 p-5">
+              <h2 className="text-base font-semibold">Liên hệ đặt hàng</h2>
+              <a
+                href="tel:0378605343"
+                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Phone className="size-4 text-primary" />
+                0378605343 / 0396313407
+              </a>
+              <a
+                href="mailto:tranleminhkhanh5734@gmail.com"
+                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Mail className="size-4 text-primary" />
+                tranleminhkhanh5734@gmail.com
+              </a>
+            </Card>
           </div>
         </div>
       ) : null}

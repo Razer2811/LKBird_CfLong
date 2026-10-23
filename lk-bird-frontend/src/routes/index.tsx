@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Fish, Bird, Leaf, ShieldCheck, Truck } from "lucide-react";
+import { Bird } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import { catalogApi } from "@/api/catalog";
 import { ErrorState, LoadingGrid } from "@/components/feedback/states";
@@ -8,6 +9,7 @@ import { ProductCard } from "@/components/shop/product-card";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { getApiErrorMessage } from "@/lib/api-error";
+import { getProductImageUrl, handleProductImageError } from "@/lib/product-image";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,27 +30,24 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const benefits = [
-  {
-    icon: Leaf,
-    title: "Nguyên liệu sạch",
-    description: "Thức ăn chọn lọc, không chất bảo quản gây hại cho vật nuôi.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Chính hãng 100%",
-    description: "Sản phẩm có nguồn gốc rõ ràng, đổi trả nếu không đúng mô tả.",
-  },
-  {
-    icon: Truck,
-    title: "Giao nhanh",
-    description: "Đóng gói kỹ cho hàng dễ vỡ, giao toàn quốc trong 1–3 ngày.",
-  },
+const heroSlides = [
+  { image: "slider-1.jpg", alt: "Sản phẩm chăm sóc chim cảnh" },
+  { image: "slider-2.jpg", alt: "Sản phẩm chăm sóc cá cảnh" },
+  { image: "slider-3.jpg", alt: "Thức ăn và phụ kiện thú cảnh" },
 ];
 
 function HomePage() {
+  const [activeSlide, setActiveSlide] = useState(0);
   const productsQuery = useQuery({ queryKey: ["products"], queryFn: catalogApi.getProducts });
   const categoriesQuery = useQuery({ queryKey: ["categories"], queryFn: catalogApi.getCategories });
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   const categoryName = (id: number) =>
     categoriesQuery.data?.find((category) => category.id === id)?.name;
@@ -80,33 +79,39 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <Card className="rounded-3xl border-border/60 bg-background/80 p-6 shadow-card">
-              <Bird className="size-8 text-primary" />
-              <h2 className="mt-4 text-lg font-semibold">Dành cho chim cảnh</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Hạt kê, cám trứng, khoáng và lồng phụ kiện cho yến, chào mào, vành khuyên.
-              </p>
-            </Card>
-            <Card className="rounded-3xl border-border/60 bg-background/80 p-6 shadow-card sm:mt-8">
-              <Fish className="size-8 text-clay" />
-              <h2 className="mt-4 text-lg font-semibold">Dành cho cá cảnh</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Thức ăn viên, men vi sinh, thuốc xử lý nước và thiết bị lọc bể.
-              </p>
-            </Card>
+          <div className="relative overflow-hidden rounded-3xl border border-border/60 bg-background/80 shadow-card">
+            <div className="relative aspect-[4/3]">
+              {heroSlides.map((slide, index) => (
+                <img
+                  key={slide.image}
+                  src={`${getProductImageUrl(`uploads/${slide.image}`)}?v=1`}
+                  alt={slide.alt}
+                  onError={handleProductImageError}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                    index === activeSlide ? "opacity-100" : "opacity-0"
+                  }`}
+                  {...(index === activeSlide ? {} : { "aria-hidden": true })}
+                />
+              ))}
+              <div className="absolute inset-x-0 bottom-0 flex justify-center gap-2 bg-gradient-to-t from-black/45 to-transparent px-4 pb-5 pt-12">
+                {heroSlides.map((slide, index) => (
+                  <button
+                    key={slide.image}
+                    type="button"
+                    aria-label={`Hiển thị ảnh ${index + 1}`}
+                    aria-current={index === activeSlide}
+                    onClick={() => setActiveSlide(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === activeSlide ? "w-8 bg-white" : "w-2 bg-white/60"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section className="mx-auto grid max-w-7xl gap-5 px-4 md:grid-cols-3 lg:px-8">
-        {benefits.map((benefit) => (
-          <Card key={benefit.title} className="rounded-3xl border-border/70 p-6 shadow-card">
-            <benefit.icon className="size-7 text-primary" />
-            <h3 className="mt-4 text-base font-semibold">{benefit.title}</h3>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">{benefit.description}</p>
-          </Card>
-        ))}
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 lg:px-8">

@@ -1,10 +1,11 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Bird, LogOut, Menu, X } from "lucide-react";
+import { LogOut, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import { authApi } from "@/api/auth";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { BRAND_LOGO_URL } from "@/lib/product-image";
 import { clearSession, getRefreshToken, useAuth } from "@/stores/auth-store";
 
 const publicLinks = [
@@ -42,10 +43,14 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
           <span className="flex size-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-card">
-            <Bird className="size-5" />
+            <img
+              src={BRAND_LOGO_URL}
+              alt="Logo Cà phê Long"
+              className="size-full rounded-2xl object-cover"
+            />
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg font-semibold">Cà phê Long, thức ăn chim, cá cảnh</span>
+            <span className="font-display text-lg font-semibold">Coffe Long - Thức ăn chim, cá cảnh</span>
             <span className="text-xs text-muted-foreground">Chim &amp; Cá cảnh</span>
           </span>
         </Link>
