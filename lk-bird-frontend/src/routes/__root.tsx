@@ -82,13 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LK Bird — Thức ăn & phụ kiện chim, cá cảnh" },
+      { title: "Cà phê Long, thức ăn chim, cá cảnh — Thức ăn & phụ kiện chim, cá cảnh" },
       {
         name: "description",
         content:
-          "LK Bird cung cấp thức ăn, thuốc và phụ kiện chăm sóc chim và cá cảnh, giao nhanh toàn quốc.",
+          "Cà phê Long, thức ăn chim, cá cảnh cung cấp thức ăn, thuốc và phụ kiện chăm sóc chim và cá cảnh, giao nhanh toàn quốc.",
       },
-      { property: "og:title", content: "LK Bird — Thức ăn & phụ kiện chim, cá cảnh" },
+      { property: "og:title", content: "Cà phê Long, thức ăn chim, cá cảnh — Thức ăn & phụ kiện chim, cá cảnh" },
       {
         property: "og:description",
         content: "Thức ăn, thuốc và phụ kiện chăm sóc chim, cá cảnh chính hãng.",

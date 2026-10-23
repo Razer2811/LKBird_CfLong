@@ -13,10 +13,10 @@ import { setSession, useAuth } from "@/stores/auth-store";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Đăng nhập — LK Bird" },
-      { name: "description", content: "Đăng nhập tài khoản LK Bird để theo dõi đơn và hồ sơ." },
-      { property: "og:title", content: "Đăng nhập — LK Bird" },
-      { property: "og:description", content: "Đăng nhập tài khoản LK Bird." },
+      { title: "Đăng nhập — Cà phê Long, thức ăn chim, cá cảnh" },
+      { name: "description", content: "Đăng nhập tài khoản Cà phê Long, thức ăn chim, cá cảnh để theo dõi đơn và hồ sơ." },
+      { property: "og:title", content: "Đăng nhập — Cà phê Long, thức ăn chim, cá cảnh" },
+      { property: "og:description", content: "Đăng nhập tài khoản Cà phê Long, thức ăn chim, cá cảnh." },
     ],
   }),
   component: LoginPage,
@@ -63,7 +63,7 @@ function LoginPage() {
       <div className="space-y-2 text-center">
         <h1 className="font-display text-3xl font-semibold">Đăng nhập</h1>
         <p className="text-sm text-muted-foreground">
-          Nhập tài khoản LK Bird của bạn để tiếp tục mua sắm.
+          Nhập tài khoản Cà phê Long, thức ăn chim, cá cảnh của bạn để tiếp tục mua sắm.
         </p>
       </div>
 

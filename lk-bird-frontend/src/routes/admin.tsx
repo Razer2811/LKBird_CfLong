@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Khu quản trị — LK Bird" },
-      { name: "description", content: "Quản lý sản phẩm, danh mục, người dùng và vai trò của LK Bird." },
-      { property: "og:title", content: "Khu quản trị — LK Bird" },
-      { property: "og:description", content: "Trang quản trị nội bộ của LK Bird." },
+      { title: "Khu quản trị — Cà phê Long, thức ăn chim, cá cảnh" },
+      { name: "description", content: "Quản lý sản phẩm, danh mục, người dùng và vai trò của Cà phê Long, thức ăn chim, cá cảnh." },
+      { property: "og:title", content: "Khu quản trị — Cà phê Long, thức ăn chim, cá cảnh" },
+      { property: "og:description", content: "Trang quản trị nội bộ của Cà phê Long, thức ăn chim, cá cảnh." },
       { name: "robots", content: "noindex" },
     ],
   }),

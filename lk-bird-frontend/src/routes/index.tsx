@@ -12,13 +12,13 @@ import { getApiErrorMessage } from "@/lib/api-error";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LK Bird — Thức ăn & phụ kiện chim, cá cảnh" },
+      { title: "Cà phê Long, thức ăn chim, cá cảnh — Thức ăn & phụ kiện chim, cá cảnh" },
       {
         name: "description",
         content:
-          "Mua thức ăn, thuốc và phụ kiện chăm sóc chim, cá cảnh chính hãng tại LK Bird. Tư vấn tận tình, giao nhanh toàn quốc.",
+          "Mua thức ăn, thuốc và phụ kiện chăm sóc chim, cá cảnh chính hãng tại Cà phê Long, thức ăn chim, cá cảnh. Tư vấn tận tình, giao nhanh toàn quốc.",
       },
-      { property: "og:title", content: "LK Bird — Thức ăn & phụ kiện chim, cá cảnh" },
+      { property: "og:title", content: "Cà phê Long, thức ăn chim, cá cảnh — Thức ăn & phụ kiện chim, cá cảnh" },
       {
         property: "og:description",
         content: "Thức ăn, thuốc và phụ kiện cho chim và cá cảnh, tư vấn tận tình.",
@@ -61,13 +61,13 @@ function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
-              <Bird className="size-4" /> LK Bird Shop
+              <Bird className="size-4" /> Cà phê Long, thức ăn chim, cá cảnh Shop
             </span>
             <h1 className="font-display text-4xl font-semibold leading-tight lg:text-5xl">
               Chăm chim, nuôi cá khoẻ mạnh mỗi ngày
             </h1>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Thức ăn, thuốc bổ và phụ kiện chọn lọc cho chim cảnh và cá cảnh. Đội ngũ LK Bird tư
+              Thức ăn, thuốc bổ và phụ kiện chọn lọc cho chim cảnh và cá cảnh. Đội ngũ Cà phê Long, thức ăn chim, cá cảnh tư
               vấn đúng nhu cầu của từng loài, từng giai đoạn.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -114,7 +114,7 @@ function HomePage() {
           <div>
             <h2 className="font-display text-3xl font-semibold">Sản phẩm nổi bật</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Những sản phẩm được người nuôi chọn mua nhiều nhất tại LK Bird.
+              Những sản phẩm được người nuôi chọn mua nhiều nhất tại Cà phê Long, thức ăn chim, cá cảnh.
             </p>
           </div>
           <Button asChild variant="outline" className="rounded-full">

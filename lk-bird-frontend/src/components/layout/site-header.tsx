@@ -45,7 +45,7 @@ export function SiteHeader() {
             <Bird className="size-5" />
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg font-semibold">LK Bird</span>
+            <span className="font-display text-lg font-semibold">Cà phê Long, thức ăn chim, cá cảnh</span>
             <span className="text-xs text-muted-foreground">Chim &amp; Cá cảnh</span>
           </span>
         </Link>

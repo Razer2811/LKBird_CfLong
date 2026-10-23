@@ -29,7 +29,7 @@ function AdminDashboardPage() {
       <PageHeader
         eyebrow="Quản trị"
         title="Tổng quan cửa hàng"
-        description="Theo dõi nhanh số lượng sản phẩm, danh mục, người dùng và vai trò trong hệ thống LK Bird."
+        description="Theo dõi nhanh số lượng sản phẩm, danh mục, người dùng và vai trò trong hệ thống Cà phê Long, thức ăn chim, cá cảnh."
       />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">

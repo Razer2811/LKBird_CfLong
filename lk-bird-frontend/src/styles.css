@@ -111,8 +111,8 @@
   --color-clay: var(--clay);
   --color-clay-foreground: var(--clay-foreground);
   --color-leaf-soft: var(--leaf-soft);
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Segoe UI", Arial, sans-serif;
+  --font-sans: "Segoe UI", Arial, sans-serif;
   --shadow-soft: var(--shadow-soft);
   --shadow-card: var(--shadow-card);
 }

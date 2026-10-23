@@ -172,7 +172,7 @@ function AdminProductsPage() {
                 id="imageUrl"
                 value={form.imageUrl}
                 onChange={(event) => setForm({ ...form, imageUrl: event.target.value })}
-                placeholder="/images/thuc-an-chim.jpg"
+                placeholder="bo31.jpg hoặc /uploads/bo31.jpg"
               />
             </div>
             <div className="space-y-2 md:col-span-2">

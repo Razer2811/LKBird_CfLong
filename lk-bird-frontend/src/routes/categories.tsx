@@ -12,13 +12,13 @@ import { getApiErrorMessage } from "@/lib/api-error";
 export const Route = createFileRoute("/categories")({
   head: () => ({
     meta: [
-      { title: "Danh mục sản phẩm — LK Bird" },
+      { title: "Danh mục sản phẩm — Cà phê Long, thức ăn chim, cá cảnh" },
       {
         name: "description",
         content:
-          "Các nhóm sản phẩm tại LK Bird: thức ăn chim, thức ăn cá, thuốc, phụ kiện lồng và bể.",
+          "Các nhóm sản phẩm tại Cà phê Long, thức ăn chim, cá cảnh: thức ăn chim, thức ăn cá, thuốc, phụ kiện lồng và bể.",
       },
-      { property: "og:title", content: "Danh mục sản phẩm — LK Bird" },
+      { property: "og:title", content: "Danh mục sản phẩm — Cà phê Long, thức ăn chim, cá cảnh" },
       {
         property: "og:description",
         content: "Duyệt theo nhóm sản phẩm để tìm nhanh thứ bạn cần.",

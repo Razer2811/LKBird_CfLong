@@ -14,10 +14,10 @@ import { useAuth } from "@/stores/auth-store";
 export const Route = createFileRoute("/profile")({
   head: () => ({
     meta: [
-      { title: "Hồ sơ của tôi — LK Bird" },
-      { name: "description", content: "Xem thông tin tài khoản LK Bird của bạn." },
-      { property: "og:title", content: "Hồ sơ của tôi — LK Bird" },
-      { property: "og:description", content: "Thông tin tài khoản LK Bird." },
+      { title: "Hồ sơ của tôi — Cà phê Long, thức ăn chim, cá cảnh" },
+      { name: "description", content: "Xem thông tin tài khoản Cà phê Long, thức ăn chim, cá cảnh của bạn." },
+      { property: "og:title", content: "Hồ sơ của tôi — Cà phê Long, thức ăn chim, cá cảnh" },
+      { property: "og:description", content: "Thông tin tài khoản Cà phê Long, thức ăn chim, cá cảnh." },
     ],
   }),
   component: () => (
@@ -36,7 +36,7 @@ function ProfilePage() {
       <PageHeader
         eyebrow="Tài khoản"
         title="Hồ sơ của tôi"
-        description="Thông tin tài khoản bạn đang dùng tại LK Bird."
+        description="Thông tin tài khoản bạn đang dùng tại Cà phê Long, thức ăn chim, cá cảnh."
       />
 
       {meQuery.isPending ? <Skeleton className="h-40 w-full rounded-3xl" /> : null}

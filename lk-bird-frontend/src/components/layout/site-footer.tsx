@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="mt-16 border-t border-border/70 bg-secondary/40">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-3 lg:px-8">
         <div className="space-y-3">
-          <p className="font-display text-xl font-semibold">LK Bird</p>
+          <p className="font-display text-xl font-semibold">Cà phê Long, thức ăn chim, cá cảnh</p>
           <p className="text-sm leading-6 text-muted-foreground">
             Thức ăn, lồng, phụ kiện và sản phẩm chăm sóc chuyên dụng cho chim và cá cảnh.
           </p>
@@ -44,7 +44,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/70 py-4 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} LK Bird. Mọi quyền được bảo lưu.
+        © {new Date().getFullYear()} Cà phê Long, thức ăn chim, cá cảnh. Mọi quyền được bảo lưu.
       </div>
     </footer>
   );

@@ -3,6 +3,8 @@ package com.lkbird.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.lkbird.dto.request.ProductRequest;
@@ -13,6 +15,7 @@ import com.lkbird.exception.ResourceNotFoundException;
 import com.lkbird.mapper.ProductMapper;
 import com.lkbird.repository.CategoryRepository;
 import com.lkbird.repository.ProductRepository;
+import com.lkbird.repository.OffsetBasedPageRequest;
 import com.lkbird.service.ProductService;
 
 @Service
@@ -32,6 +35,14 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getAllProducts() {
         return productRepository.findAll();
+    }
+
+    @Override
+    public Page<Product> getProductsPage(String keyword, Long categoryId, int offset, int limit) {
+        String normalizedKeyword = keyword == null || keyword.isBlank() ? null : keyword.trim();
+        Pageable pageable = new OffsetBasedPageRequest(offset, limit);
+
+        return productRepository.findPage(normalizedKeyword, categoryId, pageable);
     }
 
     @Override

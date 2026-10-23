@@ -12,10 +12,10 @@ import { getApiErrorMessage } from "@/lib/api-error";
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Đăng ký — LK Bird" },
-      { name: "description", content: "Tạo tài khoản LK Bird để mua thức ăn và phụ kiện thú cảnh." },
-      { property: "og:title", content: "Đăng ký — LK Bird" },
-      { property: "og:description", content: "Tạo tài khoản LK Bird chỉ trong một phút." },
+      { title: "Đăng ký — Cà phê Long, thức ăn chim, cá cảnh" },
+      { name: "description", content: "Tạo tài khoản Cà phê Long, thức ăn chim, cá cảnh để mua thức ăn và phụ kiện thú cảnh." },
+      { property: "og:title", content: "Đăng ký — Cà phê Long, thức ăn chim, cá cảnh" },
+      { property: "og:description", content: "Tạo tài khoản Cà phê Long, thức ăn chim, cá cảnh chỉ trong một phút." },
     ],
   }),
   component: RegisterPage,

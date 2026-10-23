@@ -15,6 +15,15 @@ export type Product = {
   categoryId: number;
 };
 
+export type ProductPage = {
+  items: Product[];
+  totalElements: number;
+  totalPages: number;
+  offset: number;
+  limit: number;
+  hasNext: boolean;
+};
+
 export type ProductVariant = {
   id: number;
   sku: string;

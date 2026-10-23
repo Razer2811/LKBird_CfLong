@@ -15,12 +15,12 @@ import { getProductImageUrl, handleProductImageError } from "@/lib/product-image
 export const Route = createFileRoute("/products/$id")({
   head: () => ({
     meta: [
-      { title: "Chi tiết sản phẩm — LK Bird" },
+      { title: "Chi tiết sản phẩm — Cà phê Long" },
       {
         name: "description",
-        content: "Thông tin chi tiết, giá và tình trạng kho của sản phẩm tại LK Bird.",
+        content: "Thông tin chi tiết, giá và tình trạng kho của sản phẩm tại Cà phê Long, thức ăn chim, cá cảnh.",
       },
-      { property: "og:title", content: "Chi tiết sản phẩm — LK Bird" },
+      { property: "og:title", content: "Chi tiết sản phẩm — Cà phê Long, thức ăn chim, cá cảnh" },
       {
         property: "og:description",
         content: "Thông tin chi tiết, giá và tình trạng kho của sản phẩm.",
