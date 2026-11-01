@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -111,8 +112,8 @@
   --color-clay: var(--clay);
   --color-clay-foreground: var(--clay-foreground);
   --color-leaf-soft: var(--leaf-soft);
-  --font-display: "Segoe UI", Arial, sans-serif;
-  --font-sans: "Segoe UI", Arial, sans-serif;
+  --font-display: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+  --font-sans: "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
   --shadow-soft: var(--shadow-soft);
   --shadow-card: var(--shadow-card);
 }
@@ -121,6 +122,8 @@ body {
   font-family: var(--font-sans);
   background-color: var(--background);
   color: var(--foreground);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 h1,
@@ -128,6 +131,17 @@ h2,
 h3 {
   font-family: var(--font-display);
   letter-spacing: -0.01em;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  min-height: 44px;
 }
 
 html {
