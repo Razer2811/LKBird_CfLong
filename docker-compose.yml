@@ -23,7 +23,7 @@ services:
   # SPRING BOOT BACKEND
   # =========================
   backend:
-    image: lkbird-backend:1.0
+    image: lkbird-backend:2.0
     container_name: lkbird-backend
     restart: unless-stopped
     depends_on:
